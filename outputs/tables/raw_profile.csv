@@ -1,0 +1,6 @@
+field,dtype,unique,missing,categorical
+Unnamed: 0,int64,200,0,False
+TV,float64,190,0,False
+Radio,float64,167,0,False
+Newspaper,float64,172,0,False
+Sales,float64,121,0,False

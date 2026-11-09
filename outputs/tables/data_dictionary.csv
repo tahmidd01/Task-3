@@ -1,0 +1,8 @@
+field,role,description,unit
+TV,Predictor,Television advertising expenditure,$ thousands
+Radio,Predictor,Radio advertising expenditure,$ thousands
+Newspaper,Predictor,Newspaper advertising expenditure,$ thousands
+Sales,Target,Product sales across markets,thousand units
+Total,Derived,Sum of the three channel budgets,$ thousands
+*_share,Derived,"Channel budget divided by total, or zero for a zero budget",fraction
+Unnamed: 0,Excluded,Sequential row identifier,ordinal

@@ -1,0 +1,18 @@
+{
+  "source_url": "https://www.kaggle.com/datasets/bumba5341/advertisingcsv",
+  "dataset_slug": "bumba5341/advertisingcsv",
+  "download_method": "Official Kaggle datasets download API (ZIP)",
+  "download_date": "2026-11-09",
+  "filename": "Advertising.csv",
+  "size_bytes": 5166,
+  "sha256": "69104adc017e75d7019f61fe66ca2eb4ab014ee6f2a9b39b452943f209352010",
+  "observations": 200,
+  "columns": [
+    "Unnamed: 0",
+    "TV",
+    "Radio",
+    "Newspaper",
+    "Sales"
+  ],
+  "unit_reference": "https://www.statlearning.com/s/ISLRSeventhPrinting.pdf"
+}

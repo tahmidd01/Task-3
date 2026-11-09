@@ -1,0 +1,48 @@
+{
+  "model": "Extra Trees",
+  "selected_features": "TV, Radio",
+  "fit": "Extra Trees ranks first by training-fold RMSE (0.582 ± 0.222, versus 5.103 for the mean baseline). On the holdout it records MAE 0.381, RMSE 0.486 and R² 0.993. Errors are in thousands of sales units.",
+  "cleaning": "Cleaning retained 200 of 200 markets after excluding the sequential index. It removed 0 invalid rows and 0 duplicates, and retained 2 IQR-flagged markets.",
+  "nonlinear": "Adding the TV × Radio interaction changes mean validation RMSE from 1.649 to 0.943. The additive three-channel OLS records 1.664. The interaction tests whether a channel’s predictive relationship varies with the level of the other channel.",
+  "channel_strength": "TV has the largest absolute standardized coefficient. Newspaper has the smallest, and its HC3 95% interval (-0.014 to 0.019) includes zero. The largest holdout permutation effect belongs to TV.",
+  "residuals": "Mean holdout residual is -0.047 thousand units. Spearman correlation of residual with prediction is +0.16 (p = 0.333). The largest absolute miss is 1.19 at source row 67 (zero-based). Winner train-fold RMSE averages 0.001 versus 0.582 on validation folds. The near-zero training error shows the flexibility of the fit. Holdout RMSE (0.486) is close to validation RMSE, and the residuals show little monotone trend.",
+  "recommendations": [
+    "Prioritize TV in controlled budget tests and vary TV and Radio jointly. The interaction model reduced validation error relative to the additive model.",
+    "Audit Newspaper against reach, cost and campaign objectives. The selected model uses TV, Radio, so varying Newspaper alone leaves its predictions unchanged.",
+    "At the same total budget, the scenario “Move 20% of Newspaper to Radio” yields a predicted gain of 0.99 thousand units. Pilot the reallocation while tracking incremental sales.",
+    "Among the tested spend increases, TV +20% produces the largest supported gain (+0.97 thousand units). Compare the cost and incremental sales in a controlled test.",
+    "Capture campaign dates, prices, promotions and audience segments so future models can test seasonality and segment response."
+  ],
+  "limitations": [
+    "The file covers 200 historical markets and has no calendar or segment identifiers. Estimates apply to budget scenarios for comparable markets.",
+    "Market-level associations can reflect omitted variables such as pricing, promotions or market size. Use randomized tests to estimate incremental effects.",
+    "Scenario predictions are point estimates. The range and nearest-neighbor flags measure coverage of the training data and provide no prediction interval.",
+    "Repeated CV folds overlap, and tuning and ranking share those folds. The holdout provides the final evaluation and contains only 40 markets."
+  ],
+  "captions": {
+    "sales_distribution": "Sales averages 14.02 with a median of 12.90. Sample skewness is +0.41. The dashed line marks the median.",
+    "tv_distribution": "TV averages 147.04 with a median of 149.75. Sample skewness is -0.07. The dashed line marks the median.",
+    "radio_distribution": "Radio averages 23.26 with a median of 22.90. Sample skewness is +0.09. The dashed line marks the median.",
+    "newspaper_distribution": "Newspaper averages 30.55 with a median of 25.75. Sample skewness is +0.89. The dashed line marks the median.",
+    "tv_vs_sales": "TV and sales have Pearson r = 0.78. The line summarizes the unadjusted relationship across markets. Spread around the line reflects variation at similar spend.",
+    "radio_vs_sales": "Radio and sales have Pearson r = 0.58. The line summarizes the unadjusted relationship across markets. Spread around the line reflects variation at similar spend.",
+    "newspaper_vs_sales": "Newspaper and sales have Pearson r = 0.23. The line summarizes the unadjusted relationship across markets. Spread around the line reflects variation at similar spend.",
+    "total_vs_sales": "Total and sales have Pearson r = 0.87. The line summarizes the unadjusted relationship across markets. Spread around the line reflects variation at similar spend.",
+    "channel_boxplots": "The IQR rule flags 2 markets across the measured fields. TV spans the widest budget range. Points beyond the boxplot whiskers are retained.",
+    "correlation_heatmap": "TV has r = 0.78 with sales and total spend has r = 0.87. Total inherits information from its component budgets.",
+    "pairplot": "The diagonal shows each distribution. The lower panels show joint coverage and scatter, including the wider spread in sales at higher TV budgets.",
+    "model_rmse_comparison": "The selected model’s holdout RMSE is 0.486. The teal bar identifies the training-CV winner in all comparison charts.",
+    "model_mae_comparison": "The selected model’s mean absolute holdout error is 0.381 thousand units.",
+    "model_r2_comparison": "The selected model has holdout R² of 0.993. Negative scores indicate squared error greater than predicting the holdout mean.",
+    "cross_validation_stability": "Across the shared folds, the winner averages 0.582 RMSE with fold SD 0.222. Fold SD describes stability across overlapping splits.",
+    "actual_vs_predicted": "Points close to the diagonal are better predictions. Points above it are overpredictions.",
+    "residual_distribution": "The residual histogram centers around a mean of -0.047. Negative residuals represent overprediction.",
+    "residuals_vs_predicted": "Mean holdout residual is -0.047 thousand units. Spearman correlation of residual with prediction is +0.16 (p = 0.333). The largest absolute miss is 1.19 at source row 67 (zero-based). Winner train-fold RMSE averages 0.001 versus 0.582 on validation folds. The near-zero training error shows the flexibility of the fit. Holdout RMSE (0.486) is close to validation RMSE, and the residuals show little monotone trend.",
+    "permutation_importance": "Shuffling TV produces the largest mean increase in holdout RMSE. Error bars show shuffle-to-shuffle SD.",
+    "channel_marginal_effects": "TV has the largest absolute standardized coefficient. Newspaper has the smallest, and its HC3 95% interval (-0.014 to 0.019) includes zero. The largest holdout permutation effect belongs to TV.",
+    "spend_mix": "TV accounts for 73.2% of aggregate spend. Shares compare total spending across channels, giving larger markets more weight.",
+    "budget_scenarios": "Among supported examples, Move 20% of Newspaper to Radio has the largest predicted change (+0.99 thousand units).",
+    "budget_combinations": "The larger predicted change among the two tested same-cost reallocations is +0.99 thousand units (Move 20% of Newspaper to Radio).",
+    "tv_radio_response_surface": "Newspaper is fixed at the training median ($25.60 thousand). Gray indicates sparse combinations. 96.1% of grid points meet the training support rule."
+  }
+}

@@ -1,0 +1,2 @@
+mean_residual,median_residual,residual_vs_prediction_spearman,residual_vs_prediction_p,largest_absolute_error,largest_error_source_row
+-0.04672916666666425,-0.11458333333332593,0.15703564727954974,0.33318995626703396,1.1899999999999746,67

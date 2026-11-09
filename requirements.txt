@@ -1,0 +1,17 @@
+numpy==2.2.6
+pandas==2.3.3
+scipy==1.15.3
+scikit-learn==1.7.2
+statsmodels==0.14.5
+joblib==1.5.2
+matplotlib==3.10.7
+seaborn==0.13.2
+reportlab==4.4.5
+streamlit==1.51.0
+ipykernel==7.1.0
+nbformat==5.10.4
+nbconvert==7.16.6
+jupyterlab==4.4.10
+pytest==8.4.2
+kagglehub==1.0.3
+pypdf==6.13.3
